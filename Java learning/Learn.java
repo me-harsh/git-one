@@ -1,4 +1,4 @@
-import javax.swing.plaf.metal.MetalIconFactory.FolderIcon16;
+// import javax.swing.plaf.metal.MetalIconFactory.FolderIcon16;
 
 public class Learn {
     public static void arrRev(int array[]){
