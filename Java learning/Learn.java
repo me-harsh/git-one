@@ -9,13 +9,10 @@ public class Learn {
                 }
             }
         }
-<<<<<<< HEAD
         // just adding a comment to revert
         System.out.print("print done :)");
         
-=======
->>>>>>> parent of 870c84c (just added a comment)
-    }
+    
     public static void main(String args[]){
         int arr[]={2,4,6,8,10,12,16};
         arrRev(arr);
