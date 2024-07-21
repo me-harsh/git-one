@@ -1,0 +1,647 @@
+class Pen {
+    String color;
+    int tip;
+
+    void setColor(String newcolor){
+        color = newcolor;
+        
+    } 
+    void setTip(int tipsize) {
+        tip = tipsize;
+    }
+}
+
+* these are null and 0 initiated variable 
+
+class BankAccount {
+    public String username;//public to all
+    private String password;// only accessible here in this class 
+
+}
+*
+when made private then we have to make getters and setters to get and set the properties.
+
+4 pillars of OOPs:--
+1) Encapsulation
+2) Inheritance
+3) Polymorphism
+4) Abstraction
+
+shallow copy and deep copy:
+In shallow copy if there are any objects then their reference are stored and made new in the copy constructor
+so that the new copied object now just point to same objects made in the object class like they point to
+same array. So if we change any value in one array then it will reflect in all.
+
+In deep copy we just made another array ( and not write int array1 = array, ) but do int array1 = new int[array.length] 
+then at each place put the values.
+
+also if only primitive type data then we can just make shallow copy as in just primitive type
+shallow and deep copy is same.
+
+class Pen {
+    private String color;
+    private int tip;
+    int company[];
+
+    int getTip(){
+        // return this.tip;
+        return tip;
+    }
+    String getColor(){
+        return this.color;
+    }
+
+    void setColor(String newcolor){
+        color = newcolor;
+
+    } 
+    void setTip(int tipsize) {
+        tip = tipsize;
+    }
+    //constructor 
+    Pen(String color, int tip){
+        this.color = color;
+        this.tip = tip;
+        company = new int[3];
+    }
+    Pen(int tip, String color){
+        company = new int[5];
+        this.color = color;
+        this.tip = tip;
+    }
+}
+// so what we can do is declare an array and not define the size so we can use it however we want
+// we can even leave it only declared and not define the size which we can do later
+
+* abstract methods can only be in abstract classes
+Abstract class:
+the child of the abstract class must implement the abstract methods in it.
+but the child of the child of the abstract class doesn't need to implement the abstract class as its
+parent class has already implemented it.
+
+
+Nested classes in Java allow you to define a class within another class. This can be useful for 
+logically grouping classes that are only used in one place, increasing encapsulation, and 
+improving readability and maintainability of your code. There are four types of nested classes in Java:
+
+1) Static Nested Classes: These are static and can be accessed without an instance of the outer 
+class.
+
+2) Non-static Inner Classes: These require an instance of the outer class to be instantiated.
+
+3) Local Classes: These are defined within a method.
+
+4) Anonymous Classes: These are defined without a class name and are used for instantiating 
+objects with certain "extras" such as method implementations.
+
+
+Cannot make a static reference to a non-static thing
+so a static method main can only call static methods are inside the same class
+but can call a non-static method with the use of object creation of a class which has non-static
+thing.
+
+
+
+these codes are same:--
+
+public class demo {
+    public static void main(String[] args) {
+        Horse hr = new Horse();
+        hr.color = "Blue";
+        System.out.println(hr.color);
+        Bear br = new Bear();
+        System.out.println(br.color);
+
+    }    
+    
+}
+class Animal {
+    String color;
+    Animal(){
+        System.out.println("animal constructor is called");
+    }
+}
+class Horse extends Animal {
+    Horse(){
+        System.out.println("horse constructor is called");
+        //todo:-- super.color="Blue";
+    }
+}
+class Bear extends Animal {
+    Bear() {
+        System.out.println("bear constructor is called");
+    }
+}
+
+so either I do super.color ="Blue" which sets the color of horse Blue which it extends from
+its parent class
+or do like make an its object and then set the color of horse.
+
+
+Upcast and Downcast require the name of the class to downcast and Upcast
+
+class Parent {
+    String name;
+    Parent (){
+        System.out.println("this is the parent class");
+    }
+}
+class Child extends Parent {
+    int id;
+    Child(){
+        System.out.println("this is child class");
+    }
+}
+
+Parent p = new Parent();
+        p.name = "Harsh";
+        Child c = (Child)p;  // here Child is the literal name of the Child class which we 
+        // want to downcast it to.
+
+
+Also when I do this it makes the properties of the parent similar to the child 
+Parent p = new Child();
+        p.name = "Harsh";
+        // Child c = (Child)p;
+        // System.out.println(c.name);
+As when you try to print the name of the child it will be same as the parent as we downcasted it
+
+Static variables get defined without making an object of the class ie. at initially only.
+But static methods need to be run to make it run ie. being it static doesn't mean that it runs
+inherently.
+
+So to return the type of an object we have to return like this
+return new Complex(a,b); // see this example in the complex making in OOPs
+
+when function is not static and is in another class then do this 
+
+
+public class hello{  
+    public static void main(String[] args) {
+        Complex a = new Complex(4,5);
+        Complex b = new Complex(6.1f, 8.4f);
+
+        System.out.println("Adding the complex numbers: ");
+        Complex result = a.add(a,b);
+        System.out.println(result.real);
+        // Complex result1 = new Complex( a.add(a,b));
+        // this line is also correct but creates two complex object 
+    }
+
+
+} 
+class Complex {
+    float real;
+    float img;
+    Complex (){
+        System.out.println("called");
+    }
+    Complex(float areal, float aimg){
+        // this is for making a complex object using primitive data type
+        this.real = areal;
+        this.img = aimg;
+    }
+    Complex ( Complex a) {
+        this.real = a.real;
+        this.img = a.img;
+    }
+    public Complex add(Complex a, Complex b){
+        float real = a.real + b.real;
+        float img = a.img + b.img;
+        return new Complex(real,img);
+    }
+    
+}
+
+
+
+Understanding Access Modifiers and Non-access Modifiers :--
+
+In Java, access modifiers and non-access modifiers are used to control various aspects of class
+and member visibility, behavior, and characteristics. Understanding the difference between these 
+two types of modifiers is crucial for writing robust and maintainable Java code.
+
+Access Modifiers:
+Access modifiers control the visibility and accessibility of classes, methods, and variables.
+They determine which other classes or parts of the program can access a particular member. There
+are four types of access modifiers in Java:
+
+1)public:
+
+Classes: A public class is accessible from any other class.
+Members: Public members (methods, variables) are accessible from any other class.
+
+public class MyClass {
+    public int myVar;
+    public void myMethod() {
+        // code
+    }
+}
+
+2)protected:
+
+Members: Protected members are accessible within the same package and by subclasses in other
+packages.
+
+class MyClass {
+    protected int myVar;
+    protected void myMethod() {
+        // code
+    }
+}
+
+3)default (package-private) (no modifier):
+
+Classes: A class without an access modifier is accessible only within the same package.
+Members: Default members are accessible only within the same package.
+
+class MyClass {
+    int myVar;
+    void myMethod() {
+        // code
+    }
+}
+
+4)private:
+
+Members: Private members are accessible only within the same class.
+
+class MyClass {
+    private int myVar;
+    private void myMethod() {
+        // code
+    }
+}
+
+Now comes the non-access modifiers
+
+Non-Access Modifiers:
+Non-access modifiers do not affect the visibility of classes, methods, and variables. Instead
+they provide additional information about the behavior and characteristics of the classes and
+members they modify. Here are some common non-access modifiers:
+
+1)static:
+
+Used to create class-level variables and methods that can be accessed without creating an
+instance of the class.
+
+public class MyClass {
+    static int myVar;
+    static void myMethod() {
+        // code
+    }
+}
+
+Q.can i initialise static variable inside a function
+No, you cannot declare a static variable inside a function in Java. Static variables belong to
+the class rather than any particular instance of the class, and they must be declared at the
+class level, not within a method.
+
+2)final:
+
+Used to define constants, prevent method overriding, and prevent inheritance.
+
+public final class MyClass {
+    final int myVar = 10;
+    final void myMethod() {
+        // code
+    }
+}
+
+3)abstract:
+
+Used to declare abstract classes and methods. An abstract class cannot be instantiated, and an
+abstract method must be implemented by subclasses.
+
+public abstract class MyClass {
+    abstract void myMethod();
+}
+
+4)synchronized:
+
+Used to control access to methods or blocks by multiple threads.
+
+public class MyClass {
+    synchronized void myMethod() {
+        // code
+    }
+}
+
+5)volatile:
+
+Used to indicate that a variable''s value will be modified by different threads.
+
+public class MyClass {
+    private volatile int myVar;
+}
+
+6)transient:
+
+Used to indicate that a variable should not be serialized.
+
+public class MyClass implements Serializable {
+    transient int myVar;
+}
+
+7)native:
+
+Used to indicate that a method is implemented in native code using JNI (Java Native Interface).
+
+public class MyClass {
+    native void myMethod();
+}
+
+Summary:
+Access Modifiers: Control the visibility and accessibility of classes, methods, and variables.
+
+Types: public, protected, default (package-private), private.
+Non-Access Modifiers: Provide additional information about the behavior and characteristics of 
+classes, methods, and variables.
+
+Examples: static, final, abstract, synchronized, volatile, transient, native.
+Using the right combination of access and non-access modifiers allows for better encapsulation,
+code organization, and control over the behavior and accessibility of different parts of a Java
+program.
+
+Q.Protected members are accessible within the same package and by subclasses in other packages.
+what do you mean by subclasses in other packages tell me with an example
+
+In object-oriented programming, access modifiers like protected play an important role in defining
+the visibility and accessibility of class members. In Java, protected members are accessible
+within the same package and by subclasses, even if those subclasses are in different packages.
+Let's illustrate this with an example.
+
+Example:
+1. Base Class in Package 1
+
+First, let's define a base class in a package named package1.
+
+File: package1/BaseClass.java
+
+code:
+package package1;
+
+public class BaseClass {
+    protected void protectedMethod() {
+        System.out.println("Protected method in BaseClass");
+    }
+}
+
+2. Subclass in Package 2
+
+Next, let''s define a subclass in a different package named package2.
+
+File: package2/DerivedClass.java
+
+code:
+package package2;
+
+import package1.BaseClass;
+
+public class DerivedClass extends BaseClass {
+    public void accessProtectedMethod() {
+        // Accessing the protected method from the base class
+        protectedMethod();
+    }
+
+    public static void main(String[] args) {
+        DerivedClass derivedClass = new DerivedClass();
+        derivedClass.accessProtectedMethod(); // This will print: "Protected method in BaseClass"
+    }
+}
+
+Explanation:
+BaseClass:
+
+Located in package1.
+Contains a protected method named protectedMethod().
+DerivedClass:
+
+Located in package2.
+Extends BaseClass and thus inherits its protected members.
+Contains a method accessProtectedMethod() that calls the protectedMethod() from BaseClass.
+When you run DerivedClass in package2, the accessProtectedMethod() is able to call
+protectedMethod() from BaseClass even though BaseClass is in a different package. This is
+possible because DerivedClass is a subclass of BaseClass, and it has access to its protected
+members.
+
+Q. what if I don't define the package of a java file then what is the package name given to it
+
+If you do not define a package in a Java file, the class or interface in that file is considered
+to be in the "default package." The default package does not have a name, and all classes in the
+default package are treated as if they belong to the same package.
+
+Here's an example to illustrate this:
+
+Example without Package Declaration
+File: BaseClass.java
+
+code:
+public class BaseClass {
+    protected void protectedMethod() {
+        System.out.println("Protected method in BaseClass");
+    }
+}
+
+File: DerivedClass.java
+
+code:
+public class DerivedClass extends BaseClass {
+    public void accessProtectedMethod() {
+        // Accessing the protected method from the base class
+        protectedMethod();
+    }
+
+    public static void main(String[] args) {
+        DerivedClass derivedClass = new DerivedClass();
+        derivedClass.accessProtectedMethod(); // This will print: "Protected method in BaseClass"
+    }
+}
+
+Explanation:
+BaseClass:
+
+No package declaration.
+Contains a protected method named protectedMethod().
+DerivedClass:
+
+No package declaration.
+Extends BaseClass and thus inherits its protected members.
+Contains a method accessProtectedMethod() that calls the protectedMethod() from BaseClass.
+
+Important Points:
+°Default Package Visibility: Classes in the default package can access each other’s members as
+if they are in the same package. This includes protected and package-private members.
+
+°Restricted Use: It's generally considered a good practice to avoid using the default package for
+non-trivial applications, especially when working in a team or creating libraries, as it can lead
+to naming conflicts and hinders the organization of code.
+
+°Package Declaration: To define a package, you add the package keyword at the beginning of your
+Java file, like package com.example;. This helps in organizing the code better and avoiding
+conflicts.
+
+
+Final keyword 
+
+In Java, the final keyword is used to indicate that a variable, method, or class cannot be modified or extended. Here are some of its characteristics:
+
+°Final variables: When a variable is declared as final, its value cannot be changed once it has
+been initialized. This is useful for declaring constants or other values that should not be
+modified.
+°Final methods: When a method is declared as final, it cannot be overridden by a subclass. This
+is useful for methods that are part of a class’s public API and should not be modified by
+subclasses.
+°Final classes: When a class is declared as final, it cannot be extended by a subclass. This is
+useful for classes that are intended to be used as is and should not be modified or extended.
+°Initialization: Final variables must be initialized either at the time of declaration or in the
+constructor of the class. This ensures that the value of the variable is set and cannot be
+changed.
+°Performance: The use of a final can sometimes improve performance, as the compiler can optimize
+the code more effectively when it knows that a variable or method cannot be changed.
+°Security: The final can help improve security by preventing malicious code from modifying
+sensitive data or behavior.
+
+
+Initializer Block:
+
+In order to perform any operations while assigning values to an instance data member, an
+initializer block is used. In simpler terms, the initializer block is used to declare/initialize
+the common part of various constructors of a class. It runs every time whenever the object is
+created. 
+
+The initializer block contains the code that is always executed whenever an instance is created
+and it runs each time when an object of the class is created. The initializer block is executed
+even before the constructor block when an object is created.
+
+// Java Program to Illustrate Initializer Block 
+
+// Importing required classes 
+import java.io.*; 
+
+// Main class 
+public class GFG { 
+
+	// Initializer block starts.. 
+	{ 
+		// This code is executed before every constructor. 
+		System.out.println( 
+			"Common part of constructors invoked !!"); 
+	} 
+	// Initializer block ends 
+
+	// Constructor 1 
+	// Default constructor 
+	public GFG() 
+	{ 
+
+		// Print statement 
+		System.out.println("Default Constructor invoked"); 
+	} 
+
+	// Constructor 2 
+	// Parameterized constructor 
+	public GFG(int x) 
+	{ 
+
+		// Print statement 
+		System.out.println( 
+			"Parameterized constructor invoked"); 
+	} 
+
+	// Main driver method 
+	public static void main(String arr[]) 
+	{ 
+
+		// Creating variables of class type 
+		GFG obj1, obj2; 
+
+		// Now these variables are 
+		// made to object and interpreted by compiler 
+		obj1 = new GFG(); 
+
+		obj2 = new GFG(0); 
+	} 
+}
+
+
+
+There was no main method in the above code as it was simply for illustration purposes to get a
+better understanding to draw conclusions:
+
+Observation 1: When to use a final variable?
+
+The only difference between a normal variable and a final variable is that we can re-assign the
+value to a normal variable but we cannot change the value of a final variable once assigned.
+Hence final variables must be used only for the values that we want to remain constant throughout
+the execution of the program.
+
+Observation 2: Reference final variable. 
+
+When a final variable is a reference to an object, then this final variable is called the
+reference final variable. For example, a final StringBuffer variable looks defined below as
+follows:
+
+final StringBuffer sb;
+
+As we all know a final variable cannot be re-assign. But in the case of a reference final
+variable, the internal state of the object pointed by that reference variable can be changed.
+Note that this is not re-assigning. 
+
+This property of the final is called non-transitivity.To understand what is meant by the internal
+state of the object as shown in the below example as follows:
+
+// Java Program to demonstrate
+// Reference of Final Variable
+
+// Main class
+class GFG {
+
+    // Main driver method
+    public static void main(String[] args)
+    {
+        // Creating an object of StringBuilder class
+        // Final reference variable
+        final StringBuilder sb = new StringBuilder("Geeks");
+
+        // Printing the element in StringBuilder object
+        System.out.println(sb);
+
+        // changing internal state of object reference by
+        //  final reference variable sb
+        sb.append("ForGeeks");
+
+        // Again printing the element in StringBuilder
+        // object after appending above element in it
+        System.out.println(sb);
+    }
+}
+Output:
+
+Geeks
+GeeksForGeeks
+
+* if i dont initialize a final variable in our main class then it works but elsewhere 
+it is mendatory to initialise the final variable
+
+
+Java Final Variable
+When a variable is declared with the final keyword, its value can’t be changed, essentially,
+a constant. This also means that you must initialize a final variable.
+
+If the final variable is a reference, this means that the variable cannot be re-bound to
+reference another object, but the internal state of the object pointed by that reference
+variable can be changed i.e. you can add or remove elements from the final array or final
+collection.
+
+String st = new String("hello");
+st = new String("harsh");
+
+but this cannot be done.
+
+final StringBuilder sb = new StringBuilder("hello");
+sb = new StringBuilder("bolo");
+
+Remember: When a final variable is created inside a method/constructor/block, it is called local
+final variable, and it must initialize once where it is created. See below program for local
+final variable.

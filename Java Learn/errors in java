@@ -1,0 +1,59 @@
+In Java, errors can be broadly categorized into three main types: syntax errors, runtime errors, and logical errors. Each of these types has distinct characteristics and occurs at different stages of the development process.
+
+1)Syntax Errors:
+
+°Definition: These are mistakes in the code that violate the rules of the Java programming language.
+°Detection: Syntax errors are detected by the compiler during the compilation process.
+°Examples:
+	°Missing semicolons (;).
+	°Incorrectly matched braces {} or parentheses ().
+	°Using undeclared variables.
+	°Incorrect use of keywords.
+
+2)Runtime Errors:
+
+°Definition: These errors occur during the execution of the program and can cause the program to terminate unexpectedly.
+°Detection: Runtime errors are not detected by the compiler but occur when the program is running.
+°Examples:
+	°Division by zero.
+	°Null pointer exceptions (NullPointerException).
+	°Array index out-of-bounds (ArrayIndexOutOfBoundsException).
+	°File not found exceptions (FileNotFoundException).
+
+3)Logical Errors:
+
+°Definition: These errors occur when the program compiles and runs without crashing, but produces incorrect or unexpected results.
+°Detection: Logical errors are often the most difficult to detect because they don't produce an error message or stop the program from running. They are usually identified through testing and debugging.
+°Examples:
+	°Incorrect calculations or algorithms.
+	°Infinite loops.
+	°Incorrect conditional statements that do not achieve the desired logic.
+	°Flawed business logic implementation.
+	°Additional Error Categories:
+
+4)Linker Errors:
+
+°Definition: These errors occur when the compiler is unable to successfully link together different parts of a program.
+°Detection: Linker errors are detected during the linking phase, which happens after compilation.
+°Examples:
+	°Missing libraries or dependencies.
+	°Multiple definitions of the same function.
+
+4)Semantic Errors:
+
+°Definition: These errors involve incorrect use of language constructs and result in the program not doing what the programmer intended.
+°Detection: Semantic errors are similar to logical errors but are more related to the misuse of language constructs.
+°Examples:
+	°Using a loop incorrectly.
+	°Misusing operators or functions.
+	°Understanding these different types of errors helps in effectively debugging and writing robust Java programs. Proper error handling techniques, such as try-catch blocks for runtime errors and thorough testing 	°for logical errors, are essential practices in software development.
+
+
+But these are not the error shown in the terminal these are just the types to read.
+
+
+
+Types of variables in java:
+1)Local Variables
+2)Instance Variables
+3)Static Variables

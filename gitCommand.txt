@@ -1,0 +1,24 @@
+1)git ls-files = to see the files in the staging area
+2)git config --global -e => to edit our global setting file of git
+3)git ls-tree <the commit id> => this show the snapshot of the stage of that commit all the files and directories of that commit. eg. git ls-tree head~1
+4)git restore --staged <filename> => what it does is it removes the last staged file of the filename. (it doesn't change the original file in repository just removes the last staged file of the filename).
+
+* from that time snapshot we all have the unique identifier to show what that file of the directory looked like and to show that info use => git show <unique identifier>
+
+
+* now to use our visual difftool we use "difftool" instead of "diff" in the code of git.
+
+
+* To remove a file we have to remove it from both our working directory and staging area so to do it we do => git rm file2.txt
+
+* renaming our file is two stage operation for git ie. removing a file and saving again the same content with some other name. when staging done git recognises it as renaming. this is done for the file and in staging area so below is its shortcut
+
+* so to do the above we can also simply do this => git mv file1.js main.js, so it renames it from file1.js to main.js
+
+* in .gitignore file if we write 
+eg. logs/ => mean logs directory to ignore
+
+* gitignore only works if you haven't included a file in your directory and it is mentioned to ignore it so it will ignore that file in future perfectly. But if you haven't mentioned a file in gitignore to ignore and 1st make the file then put it in gitignore then it won't do it.
+For that we then have to first remove that file which git is tracking from the staging area.
+
+Now for various languages head to github.com/github/gitignore to see the file to ignore for any language coz they get automatically generated. like .class files in java
