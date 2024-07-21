@@ -1,5 +1,7 @@
 # self made exceptions
 *.png
+MUP/
+*.xlsx
 
 #This is the ignore file for JAVA >>>>>>!!!!!!
 
