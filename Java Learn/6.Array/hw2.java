@@ -14,11 +14,11 @@ public class hw2 {
             leftMax[i]=Math.max(arr[i],leftMax[i-1]);
         }
         for (int i = n-1; i>=0; i--) {
-            rightMax[i]=Math.max(arr[i],rightMax[i+1])
+            rightMax[i]=Math.max(arr[i],rightMax[i+1]);
         }
         int twater=0;
         for (int j = 0; j < rightMax.length; j++) {
-            int waterLevel=(Math.min(leftMax[i],rightMax[i])(int))-arr[i];
+            int waterLevel=(Math.min(leftMax[j],rightMax[j]))-arr[j];
             twater+=waterLevel;   
         }
         return twater;

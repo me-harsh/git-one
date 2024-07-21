@@ -1,5 +1,5 @@
 import java.util.*;
-public class calc {
+public class Calc {
     public static void main(String arg[]){
         Scanner sc = new Scanner(System.in);
         System.out.print("give ur 1st operand:");
