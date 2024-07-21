@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class Spiral {
     // public static void makeMatrix(int rows,int cols) {
     //     int matrix[][]=new [rows][cols];
@@ -63,6 +63,7 @@ public class Spiral {
         // int cols=sc.nextInt();
         int arr [][]={{1,2,3,41},{4,5,6,42}};
         printmatrix(arr);
+        System.out.println();
         
         // makeMatrix(rows, cols);
         spiralMatrix(arr);

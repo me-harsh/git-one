@@ -1,33 +1,43 @@
 public class Diagonal {
     public static void diagonalSum(int matrix[][]) {
         // ! ye wala bhi O(2n) complexity ka hai
-        int lsum = 0;
-        int rsum = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            lsum+=matrix[i][i];
-        }
-        System.out.println(lsum);
-        int r=0,c=matrix[0].length-1;
-        while(r<matrix.length){
-            rsum+=matrix[r][c];
-            r++;
-            c--;
-        }
+
+
+        // int lsum = 0;
+        // int rsum = 0;
+        // for (int i = 0; i < matrix.length; i++) {
+        //     lsum+=matrix[i][i];
+        // }
+        // System.out.println(lsum);
+        // int r=0,c=matrix[0].length-1;
+        // while(r<matrix.length){
+        //     rsum+=matrix[r][c];
+        //     r++;
+        //     c--;
+        // }
+
+
         /*for(int r=0,c=matrix[0].length-1;r<matrix.length;r++){
             rsum+=matrix[r][c];
             c--;
         } */
         //if our matrix is even that is no overlapping values
-        System.out.println("left diagonal sum:"+lsum);
-        System.out.println("right diagonal sum:"+rsum);
-        if (matrix.length%2==0) {
-            System.out.print("the sum of the diagonals is :"+(lsum+rsum));
+
+
+        // System.out.println("left diagonal sum:"+lsum);
+        // System.out.println("right diagonal sum:"+rsum);
+        // if (matrix.length%2==0) {
+        //     System.out.print("the sum of the diagonals is :"+(lsum+rsum));
             
-        } else System.out.print("the sum of the diagonals is :"+(lsum+rsum-matrix[matrix.length/2][matrix.length/2]));
+        // } else System.out.print("the sum of the diagonals is :"+(lsum+rsum-matrix[matrix.length/2][matrix.length/2]));
         
+
+
         // * best optimised is this one with O(n)
         //consider this part completely different from the above one 
         // the variables and all different 
+
+
         int sum=0;
         for (int i = 0; i < matrix.length; i++) {
             sum+=matrix[i][i];
@@ -37,6 +47,7 @@ public class Diagonal {
             if(i!=matrix.length-i-1) // as our j is defined in terms of i
                 sum+=matrix[i][matrix.length-i-1];
         }
+        System.out.println(sum);
     }
     public static void main(String args[]) {
         int matrix[][]={{1,2,3,4},
