@@ -1,12 +1,17 @@
-public class hello {
-    public static void main(String args[]) {
-        System.out.print("just a print out statement ");
+
+import java.util.*;
+import java.text.*;
+public class Hello{  
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         
+
+
     }
-    public static void hel(int adding) {
-    
-        System.out.println("i am fine thanx");
-        
-        return ;
-    }
-}
+} 
+
+
+
+
+
