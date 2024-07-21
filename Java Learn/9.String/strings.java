@@ -1,7 +1,7 @@
 import java.util.*;
 public class strings {
     public static void main(String[] args) {
-        char a[] = {'a','b','c','d'};
+        // char a[] = {'a','b','c','d'};
         // String string = new String ("xyz");
         // String sr= "abcd";
         Scanner sc = new Scanner(System.in);

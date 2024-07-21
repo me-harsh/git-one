@@ -1,4 +1,4 @@
-import java.math.*;
+
 public class shortestpath {
     public static float displacement(String str) {
         int x=0, y=0;
