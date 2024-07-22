@@ -3,6 +3,17 @@
 3)git ls-tree <the commit id> => this show the snapshot of the stage of that commit all the files and directories of that commit. eg. git ls-tree head~1
 4)git restore --staged <filename> => what it does is it removes the last staged file of the filename. (it doesn't change the original file in repository just removes the last staged file of the filename).
 
+5)git config --list => to list all the setting in one go.
+
+6)git push origin main => to push the local changes of the main branch to the remote main branch
+
+origin => mean here that from the repos we cloned this is this should push to the origin or the default repo from which we cloned it.
+main => mean here that push it to the main branch of that repo.
+
+
+* local -> mean on our laptop
+* remote -> mean on github
+
 * from that time snapshot we all have the unique identifier to show what that file of the directory looked like and to show that info use => git show <unique identifier>
 
 
