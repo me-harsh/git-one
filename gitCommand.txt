@@ -6,10 +6,19 @@
 5)git config --list => to list all the setting in one go.
 
 6)git push origin main => to push the local changes of the main branch to the remote main branch
+*now if we are only pushing it to same origin then there is a shorcut 
+once do this -> git push -u origin main 
+so next time if we just do git push it will automatically push it to origin main.
 
 origin => mean here that from the repos we cloned this is this should push to the origin or the default repo from which we cloned it.
 main => mean here that push it to the main branch of that repo.
 
+7)git branch -m <name> => to change the name of the current branch
+8)git config --global init.defaultBranch <name> => to cofigure the default name of the main branch when git init command is called.
+
+9) git remote -v => to verify the remote repo to which our local repo fetch from and to push it .
+
+10) git branch => to chech on which branch are we.
 
 * local -> mean on our laptop
 * remote -> mean on github
