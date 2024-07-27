@@ -1,5 +1,6 @@
 # self made exceptions
 *.png
+*.jpeg
 MUP/
 *.xlsx
 
